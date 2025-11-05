@@ -8,7 +8,7 @@ reproducibleInputsPath = "~/git/reproducibleInputs"
 
 out <- SpaDES.project::setupProject(
   Restart = TRUE,
-  useGit = TRUE,
+  useGit = 'JWTurn',
   updateRprofile = TRUE,
   #overwrite = TRUE,
   paths = list(projectPath =  projPath
@@ -56,36 +56,4 @@ out <- SpaDES.project::setupProject(
 results <- SpaDES.core::simInitAndSpades2(out)
 
 
-
-
-out <- SpaDES.project::setupProject(
-  Restart = TRUE,
-  updateRprofile = FALSE,
-  paths = list(projectPath = projPath),
-  options = options(
-    spades.allowSequentialCaching = TRUE,
-    spades.moduleCodeChecks = FALSE,
-    spades.recoveryMode = 1,
-    reproducible.inputPaths = reproducibleInputsPath,
-    reproducible.useMemoise = TRUE
-  ),
-
-  modules = c('gc-rmcinnes/caribouLocPrep@main',
-              'gc-rmcinnes/prepTracks@main',
-              'JWTurn/prepLandscape@main',
-              'gc-rmcinnes/extractLand@main'),
-
-  params = list(
-    .globals = list(
-      .plots = c("png"),
-      .useCache = c(".inputObjects"),
-      jurisdiction = c("BC"),
-      .studyAreaName=  "bcnwt",
-      histLandYears = 2019:2021)
-  ),
-
-  packages = c('RCurl', 'XML', 'snow', 'googledrive', 'httr2', "terra", "gert", "remotes",
-               "PredictiveEcology/reproducible@AI", "PredictiveEcology/LandR@development",
-               "PredictiveEcology/SpaDES.core@box")
-)
 
