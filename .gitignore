@@ -12,3 +12,5 @@ outputs
 .httr-oauth
 .DS_Store
 .quarto
+
+_targets/
