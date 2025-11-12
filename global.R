@@ -20,6 +20,7 @@ out <- SpaDES.project::setupProject(
     spades.recoveryMode = 1,
     reproducible.inputPaths = reproducibleInputsPath,
     reproducible.useMemoise = TRUE
+    ,reproducible.cloudFolderID = 'https://drive.google.com/drive/folders/1SyBgqavxglXIM1_LniX11bgnfXdiGLZm?usp=share_link'
   ),
   modules = c('gc-rmcinnes/caribouLocPrep@main',
               'gc-rmcinnes/prepTracks@main',
@@ -54,6 +55,6 @@ out <- SpaDES.project::setupProject(
 
 
 results <- SpaDES.core::simInitAndSpades2(out)
-
+results <- SpaDES.core::restartSpades()
 
 
