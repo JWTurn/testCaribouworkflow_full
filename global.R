@@ -25,14 +25,17 @@ out <- SpaDES.project::setupProject(
   modules = c('gc-rmcinnes/caribouLocPrep@main',
               'gc-rmcinnes/prepTracks@main',
               'JWTurn/prepLandscape@main',
-              'gc-rmcinnes/extractLand@main'
+              'gc-rmcinnes/extractLand@main',
+              'gc_rmcinnes/caribouiSSA@main'
 
   ),
   params = list(
     .globals = list(
       .plots = c("png"),
-      .studyAreaName=  "bc",
-      jurisdiction = c("BC"),
+      .studyAreaName=  "NT",
+      jurisdiction = c("NT"),
+      MoveBankUser = "rmcinnescfs",
+      MoveBankPass = "Fr3nchm@ns",
       .useCache = c(".inputObjects"),
       histLandYears = 2019:2021
     )
@@ -42,7 +45,7 @@ out <- SpaDES.project::setupProject(
 
   packages = c('RCurl', 'XML', 'snow', 'googledrive', 'httr2', "terra", "gert", "remotes",
                "PredictiveEcology/reproducible@AI", "PredictiveEcology/LandR@development",
-               "PredictiveEcology/SpaDES.core@box")
+               "PredictiveEcology/SpaDES.core@box", "distanceto")
 
   # OUTPUTS TO SAVE -----------------------
   # outputs = {
