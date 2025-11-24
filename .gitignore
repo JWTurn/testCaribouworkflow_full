@@ -14,3 +14,5 @@ outputs
 .quarto
 
 _targets/
+
+CHECKSUMS.txt
