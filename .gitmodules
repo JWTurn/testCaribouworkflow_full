@@ -13,3 +13,6 @@
 [submodule "modules/caribouiSSA"]
 	path = modules/caribouiSSA
 	url = https://github.com/gc-rmcinnes/caribouiSSA
+[submodule "modules/caribou_SSUD"]
+	path = modules/caribou_SSUD
+	url = https://github.com/JWTurn/caribou_SSUD
